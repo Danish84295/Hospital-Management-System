@@ -38,42 +38,23 @@ function BookAppointment() {
 
       <form className="space-y-4" onSubmit={handleSubmit(onsubmit)}>
         
-        {selectedDoctors? (
-  <div className="mb-4">
-    <label className="font-semibold">
-      Selected Doctor
-    </label>
-
-    <input
-      type="text"
-      value={selectedDoctors.name}
-      readOnly
-      className="w-full border p-2 rounded mt-1"
-    />
-  </div>
-) : (
-  <div className="mb-4">
-    <label className="font-semibold">
-      Select Doctor
-    </label>
-
-    <select className="w-full border p-2 rounded mt-1">
-      <option value="">
-        Select Doctor
-      </option>
+      <select
+        className="w-full border p-2 rounded mt-1"
+        defaultValue={selectedDoctors?.id || ""}
+      >
+        <option value="">
+          Select Doctor
+        </option>
 
       {doctors.map((doctor) => (
         <option
-          key={doctor.id}
-          value={doctor.id}
+        key={doctor.id}
+        value={doctor.id}
         >
           {doctor.name}
         </option>
       ))}
-    </select>
-  </div>
-)}
-
+      </select>
         {/* First Name */}
         <div>
           <label>First Name:</label>
