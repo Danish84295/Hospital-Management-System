@@ -50,6 +50,7 @@ function AppRoutes() {
                 <BookAppointment/>
             }
         /> 
+        
     </Routes>
     </>
   );
